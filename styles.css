@@ -1,0 +1,457 @@
+  
+  @font-face {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(fonts/Georgia.woff2) format('woff2'),
+    url(fonts/Georgia.woff) format('woff');
+  }
+  
+  @font-face {
+    font-family: 'Unbounded';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(fonts/Unbounded-Regular.woff2) format('woff2'),
+    url(fonts/Unbounded-Regular.woff) format('woff');
+  }
+  
+  @font-face {
+    font-family: 'Comic Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(fonts/ComicSans.woff2) format('woff2'),
+    url(fonts/ComicSans.woff) format('woff');
+  }
+  
+  @font-face {
+    font-family: 'Courier New';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(fonts/CourierNew.woff2) format('woff2'),
+    url(fonts/CourierNew.woff) format('woff');
+  }
+   
+  .button {
+    margin: 0;
+    padding: 10px 15px;
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    background-color: #3a7118;
+    border-radius: 5px;
+    font-family: 'Unbounded', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .button:active {
+    background-color: #4DCC00;
+  }
+  .checkbox {
+    width: 23px;
+    height: 23px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .checkbox-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 23px;
+    height: 23px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 1;
+  }
+  
+  .checkbox-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 23px;
+    width: 23px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    box-sizing: border-box;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .checkbox-input:checked ~ .checkbox-checkmark {
+    background-color: #fff;
+    background-image: url("./img/checkmark_icon.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 12px 10px;
+    border: none;
+  }
+
+  .editing-area-container {
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.10), 0 9px 9px 0 rgba(0, 0, 0, 0.09), 0 21px 12px 0 rgba(0, 0, 0, 0.05), 0 37px 15px 0 rgba(0, 0, 0, 0.01), 0 57px 16px 0 rgba(0, 0, 0, 0.00);
+  }
+  
+  .editing-area-file-input {
+    display: none;
+  }
+  
+  .editing-area-label {
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    height: 38px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Unbounded', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #252627;
+    background-color: #c2c8ce;
+    box-shadow: 0 1px 1px 0 rgba(50, 56, 63, 0.10), 0 3px 3px 0 rgba(50, 56, 63, 0.09), 0px 6px 4px 0px rgba(50, 56, 63, 0.05), 0px 10px 4px 0px rgba(50, 56, 63, 0.01), 0px 16px 5px 0px rgba(50, 56, 63, 0.00);
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .editing-area-button:active {
+    background-color: #AFB8C1;
+    box-shadow: none;
+  }
+
+  .editor-tools-button {
+    margin: 0;
+    padding: 10px 15px;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 5px;
+    font-family: 'Unbounded', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #fff;
+    cursor: pointer;
+  }
+  .editor-tools-block {
+    width: 100%;
+  }
+  .editor-tools-button:active {
+    border: 1px solid #7BFF2B;
+    color: #7BFF2B;
+  }
+  input[type="color" i]::-webkit-color-swatch {
+    border: none;
+  }
+
+  .editor-tools-font-size-controls {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 5px;
+  }
+
+  .editor-tools-layout-button-container {
+    margin-top: 10px;
+    width: 105px;
+    height: 105px;
+    position: relative;
+  }
+
+  .editor-tools-size-input {
+    padding: 10px;
+    width: 90px;
+    height: 35px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: center;
+    overflow: hidden;
+    color: #fff;
+    outline-color: #7BFF2B;
+    box-sizing: border-box;
+  }
+
+
+  .editor-tools-text-input {
+    margin: 10px 0 0;
+    padding: 10px;
+    border: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 35px;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    font-family: 'Unbounded', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #252627;
+    text-align: left;
+  }
+  
+  .editing-area {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 40px;
+  }
+  
+
+  .editor-tools-text-layout-button_down {
+    background-image: url("../../../../../img/down_icon.svg");
+    background-size: 12px 8px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .editor-tools-text-layout-button_down:active {
+    background-image: url("../../../../../img/down_icon_active.svg");
+  }
+  
+  .editor-tools-text-layout-button_left {
+    background-image: url("../../../../../img/left_icon.svg");
+    background-size: 8px 12px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  
+  .editor-tools-text-layout-button_left:active {
+    background-image: url("../../../../../img/left_icon_active.svg");
+  }
+  
+
+  .editor-tools-text-layout-button_right {
+    background-image: url("../../../../../img/right_icon.svg");
+    background-size: 8px 12px;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+  
+  .editor-tools-text-layout-button_right:active {
+    background-image: url("../../../../../img/right_icon_active.svg");
+  }
+  
+
+  .editor-tools-text-layout-button_top {
+    background-image: url("../../../../../img/up_icon.svg");
+    background-size: 12px 8px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .editor-tools-text-layout-button_top:active {
+    background-image: url("../../../../../img/up_icon_active.svg");
+  }
+  
+
+  .editor-tools-text-layout-button {
+    margin: 0;
+    padding: 0;
+    border: 1px solid #fff;
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+  }
+  
+  .editor-tools-text-layout-button:active {
+    border: 1px solid #7BFF2B;
+  }
+  
+
+  .editor-tools-title {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+  }
+  
+  .editor-tools-typography {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+  }
+
+  .editor-tools-typography-button_italic {
+    font-family: 'Georgia', Arial, sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .editor-tools-typography-button {
+    margin: 0;
+    padding: 8px;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 18px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .editor-tools-typography-button:active {
+    border: 1px solid #7BFF2B;
+    color: #7BFF2B;
+  }
+
+  .editor-tools-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 8px;
+  }
+
+  .editor-tools {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+  }
+  
+  .page-aside {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-color: #104933;
+    padding: 25px 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .page-container {
+    min-width: 320px;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    justify-items: stretch;
+    align-items: stretch;
+  }
+
+  .page {
+    font-family: 'Unbounded', Arial, sans-serif;
+    background-color: #fff;
+    position: relative;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  .select {
+    padding: 0 8px;
+    position: relative;
+    width: 200px;
+    height: 35px;
+    border: 1px solid #fff;
+    background-color: #3a7118;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #fff;
+    outline-color: #7BFF2B;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('../../../img/down_icon.svg');
+    background-position: 175px center;
+    background-repeat: no-repeat;
+  }
+
+  .text-element-highlight {
+    border: 1px solid rgba(175, 184, 193, 0.7);
+  }
+  
+  .tooltip-icon {
+    width: 18px;
+    height: 18px;
+    opacity: .3;
+    cursor: pointer;
+  }
+
+  .tooltip-text {
+    display: none;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 150px;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12px;
+    color: #fff;
+    opacity: .5;
+    top: 22px;
+    left: 0;
+  }
+
+  .tooltip {
+    position: relative;
+  }
+  
+  #text-color {
+    width: 35px;
+  }
+
+  .editor-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }

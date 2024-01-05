@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme-generator</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="page">
+    <div class="page-container">
+      <div class="editing-area">
+        <div id="meme-container" class="editing-area-container">
+          <img id="meme-image">
+        </div>
+
+      </div>
+      <div class="page-aside">
+        <div class="page-editor-tools">
+          <section class="editor-tools page-section">
+            <div class="editor-tools-block">
+              <label class="editor-tools-title" for="text-input">Введите текст</label>
+              <input
+                class="editor-tools-text-input"
+                id="text-input"
+                type="text"
+                minlength="1"
+                maxlength="100"
+              />
+            </div>
+            <div class="editor-tools-block">
+              <label class="editor-tools-title" for="edit-font">Шрифт</label>
+              <label class="editor-tools-title" for="edit-text-size">и размер</label>
+              <div class="editor-tools-font-size-controls">
+                <select class="select" id="edit-font">
+                  <option value="Arial">Arial</option>
+                  <option value="Comic Sans">Comic Sans</option>
+                  <option value="Courier New">Courier New</option>
+                  <option value="Georgia">Georgia</option>
+                </select>
+                <input class="editor-tools-size-input" id="edit-text-size" type="text" name="text-size" min="8" max="96" value="36">
+              </div>
+            </div>
+            <div class="editor-tools-typography">
+                <div class="editor-tools-wrapper">
+                    <label class="editor-tools-title" for="text-color">Цвет</label>
+                    <input type="color" id="text-color" value="#ffffff">
+                  </div>
+              <div class="editor-tools-wrapper">
+                <label for="bold" class="editor-tools-title">Жирность</label>
+                <div class="checkbox">
+                  <input class="checkbox-input" type="checkbox" id="bold">
+                  <span class="checkbox-checkmark"></span>
+                </div>
+              </div>
+              <div class="editor-tools-wrapper">
+                <label for="italic" class="editor-tools-title">Курсив</label>
+                <div class="checkbox">
+                  <input class="checkbox-input" type="checkbox" id="italic">
+                  <span class="checkbox-checkmark"></span>
+                </div>
+              </div>
+            </div>
+            <button id="add-text-btn" class="editor-tools-button">Добавить текст</button>
+            <div>
+              <div class="editor-tools-wrapper">
+                <h3 class="editor-tools-title">Расположение текста</h3>
+                <div class="tooltip">
+                  <img id="tooltip-icon" class="tooltip-icon" src="./img/question_icon.svg" alt="Иконка вопроса" />
+                  <p id="tooltip" class="tooltip-text">Чтобы поменять расположение текста или удалить его, выберите нужный текст</p>
+                </div>
+              </div>
+              <div class="editor-block">
+              <div class="editor-tools-layout-button-container">
+                <button id="align-top" class="editor-tools-text-layout-button editor-tools-text-layout-button_top"></button>
+                <button id="align-right" class="editor-tools-text-layout-button editor-tools-text-layout-button_right"></button>
+                <button id="align-down" class="editor-tools-text-layout-button editor-tools-text-layout-button_down"></button>
+                <button id="align-left" class="editor-tools-text-layout-button editor-tools-text-layout-button_left"></button>
+              </div>
+            </div>
+            </div>
+            <div>
+              <button id="delete-btn" class="editor-tools-button">Удалить текст</button>
+            </div>
+            <label class="editing-area-label" for="image-input">Выберите файл</label>
+            <input class="editing-area-file-input" type="file" id="image-input" accept="image/*">
+            <button id="save-meme-btn" class="button">Сохранить</button>
+          </section>
+        </div>
+      </div>
+    </div>
+       <script src="app.js"></script>
+    </body>
+</html>
+
